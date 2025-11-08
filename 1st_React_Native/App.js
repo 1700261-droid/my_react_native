@@ -1,6 +1,16 @@
 import React from "react";
-import {StyleSheet, View, Text, Image} from "react-native";
-
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  Alert,
+  Platform,
+  TouchableOpacity
+} from "react-native";
+const onPressButton = () =>{
+  Alert.alert("Button Pressed!");
+};
 const App = () => {
   return (
     <View style={[styles.container, {flex: 1}]}>
@@ -17,17 +27,34 @@ const App = () => {
       <View style={[styles.box, {backgroundColor: 'steelblue'}]} />
       </View>
 
+     <TouchableOpacity onPress={onPressButton}>
+          <View style={styles.button}>
+          <Text style={styles.buttonText}>TouchableOpacity</Text>
+        </View>
+      </TouchableOpacity>
+
       </View>
     </View>
   );
 };
 
 
-
 const styles = StyleSheet.create({
   container: {
     marginTop: 50,
     backgroundColor: "powderblue"
+  },
+  button: {
+    marginTop: 15,
+    marginBottom: 15,
+    width: 260,
+    alignItems: 'center',
+    backgroundColor: '#2196F3',
+  },
+  buttonText: {
+    textAlign: 'center',
+    padding: 20,
+    color: 'white',
   },
   textStyle: {
     margin:10,
